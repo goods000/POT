@@ -36,20 +36,11 @@
 	
 	<div class="phone">
 		<div class="phone_contert">
-			<div class="phone_list bt">
-				<span>充值金额： </span>
-				<input type="number" id="num" placeholder="请输入充值金额" />
-			</div>
-			<div class="phone_list bb">
-				<span>支付密码： </span>
-				<input type="password" value="" id="password" placeholder="请输入支付密码" />
-			</div>
 			<div class="phone_list bb QR_code">
 				<span>二维码： </span>
 			</div>
 			<div class="phone_list bb QR_code">
-				<input type="file" name="file1" id="xdaTanFileImg_1" onchange="xmTanUploadImg_1(this)" accept="image/*" />
-				<img src="img/chuan.png" style="width: 100%;height: 100%;display:block;" id="xmTanImg_1" alt=""/>
+				<img src="img/login_logo.png" style="width: 100%;height: 100%;display:block;" id="" alt=""/>
 			</div>
 			<div class="two">
 				<div class="phone_list bb">
@@ -61,13 +52,24 @@
 					<input type="text" name="bank" class="bank" id="bank" placeholder="请输入所在银行"/>
 				</div>
 				<div class="phone_list bb">
-					<span>银行支行： </span>
-					<input type="text" class="pay_bank" name="pay_bank" id="pay_bank" placeholder="请输入银行支行"/>
-				</div>
-				<div class="phone_list bb">
 					<span>银行卡号： </span>
 					<input type="number" class="numCard" name="numCard" id="numCard" placeholder="请输入银行卡号"/>
 				</div>
+			</div>
+			<div class="phone_list bt">
+				<span>充值金额： </span>
+				<input type="number" id="num" placeholder="请输入充值金额" />
+			</div>
+			<div class="phone_list bb">
+				<span>支付密码： </span>
+				<input type="password" value="" id="password" placeholder="请输入支付密码" />
+			</div>
+			<div class="phone_list bb">
+				<span>上传凭证： </span>
+			</div>
+			<div class="phone_list bb">
+				<input type="file" name="file1" id="xdaTanFileImg_1" onchange="xmTanUploadImg_1(this)" accept="image/*" />
+				<img src="img/chuan.png" style="width: 100%;height: 100%;display:block;" id="xmTanImg_1" alt=""/>
 			</div>
 		</div>
 		<button class="annius">确定</button>
@@ -98,10 +100,10 @@
 			var num = $("#num").val();
 			var passwords = $("#password").val();
 			var value = $("#driverlist option:selected").text();
+			var code = $("input[name='file1']").val();
 			if(value == "微信支付" || value == "支付宝"){
                	$(".two").hide();
 			   	$(".QR_code").show();
-				var code = $("input[name='file1']").val();
 				if( num === ""){
 					layer.msg('请输入充值金额',{icon:2,time:1000});
 					$("#num").focus();
@@ -112,7 +114,7 @@
 					return false;
 				}
 				if(code === ""){
-					layer.msg('请上传二维码',{icon:2,time:1000});
+					layer.msg('请上传凭证',{icon:2,time:1000});
 					return false;
 				}
 				layer.msg('充值成功',{icon:6,time:1000});
@@ -122,17 +124,7 @@
 				$(".QR_code").hide();
 				var name=$("#name").val();
 				var bank=$("#bank").val();
-				var pay_bank=$("#pay_bank").val();
 				var numCard=$("#numCard").val();
-				if( num === ""){
-					layer.msg('请输入充值金额',{icon:2,time:1000});
-					$("#num").focus();
-					return false;
-				}
-				if(!Check_payPwd(passwords)){
-					$("#password").focus();
-					return false;
-				}
 				if( name=== ""){
 					layer.msg('请输入持卡人姓名',{icon:2,time:1000});
 					$("#name").focus();
@@ -143,13 +135,21 @@
 					$("#bank").focus();
 					return false;
 				}
-				if(pay_bank === ""){
-					layer.msg('请输入银行支行',{icon:2,time:1000});
-					$("#pay_bank").focus();
-					return false;
-				}
 				if(!isCard(numCard)){
 					$("#numCard").focus();
+					return false;
+				}
+				if( num === ""){
+					layer.msg('请输入充值金额',{icon:2,time:1000});
+					$("#num").focus();
+					return false;
+				}
+				if(!Check_payPwd(passwords)){
+					$("#password").focus();
+					return false;
+				}
+				if(code === ""){
+					layer.msg('请上传凭证',{icon:2,time:1000});
 					return false;
 				}
 				layer.msg('银行卡充值成功',{icon:6,time:1000});
