@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:history.back(-1);"></button>
+	    	<p>我的银行卡</p>
+	    	<a href="bank_add.html">添加银行卡</a>
+		</h1>
+		<div class="bank_big">
+			<div class="bank_box">
+				<div class="top">
+					<div class="left">
+						<div><img src="img/bank_logo.png"/><b>农业银行</b></div>
+						<p class="title">储蓄卡</p>
+					</div>
+					<div class="right">
+						<a class="del">删除</a>
+						<a href="bank_add.html" class="edit">修改</a>
+					</div>
+				</div>
+				<div class="bottom">
+					****   ****   ****   9323
+				</div>
+			</div>
+			<div class="bank_box">
+				<div class="top">
+					<div class="left">
+						<div><img src="img/bank_logo.png"/><b>农业银行</b></div>
+						<p class="title">储蓄卡</p>
+					</div>
+					<div class="right">
+						<a class="del">删除</a>
+						<a href="bank_add.html" class="edit">修改</a>
+					</div>
+				</div>
+				<div class="bottom">
+					****   ****   ****   9323
+				</div>
+			</div>
+			<div class="bank_box">
+				<div class="top">
+					<div class="left">
+						<div><img src="img/bank_logo.png"/><b>农业银行</b></div>
+						<p class="title">储蓄卡</p>
+					</div>
+					<div class="right">
+						<a class="del">删除</a>
+						<a href="bank_edit.html" class="edit">修改</a>
+					</div>
+				</div>
+				<div class="bottom">
+					****   ****   ****   9323
+				</div>
+			</div>
+		</div>
+		
+		<!--没有数据时显示-->
+		<div class="kong">
+			<img src="img/kong.png" />
+			<p>暂无记录</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function show() {
+			//没有数据的时候显示
+			console.log($(".bank_big .bank_box").length);
+			if($(".bank_big .bank_box").length <= 0) {
+				$(".kong").show();
+			} else {
+				$(".kong").hide();
+			}
+		}
+		show();
+		
+		$(".del").click(function(){
+			$(this).parent().parent().parent().remove();
+		})
+	</script>
+</html>

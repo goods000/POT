@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:history.back(-1);"></button>
+	    	<p data-lang="">收益明细</p>
+		</h1>
+		<div class="income_box">
+			<div class="income">
+				<p class="title">累计总收益</p>
+				<p class="data">0.000</p>
+				<div class="data_box">
+					<div class="">
+						<p>定期收益</p>
+						<p>0.000</p>
+					</div>
+					<div class="">
+						<p>短期收益</p>
+						<p>0.000</p>
+					</div>
+					<div class="">
+						<p>活期收益</p>
+						<p>0.000</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="details">
+			<div class="tab">
+				<a href="javascript:;" class="active">定期收益</a>
+				<a href="javascript:;">短期收益</a>
+				<a href="javascript:;">活期收益</a>
+			</div>
+			<div class="details_box">
+				<div class="lei">
+					<div class="dataList">
+						<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>
+						<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>
+						<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>
+						<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lei two">
+					<div class="dataList">
+						<!--<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>-->
+					</div>
+				</div>
+				<div class="lei two">
+					<div class="dataList">
+						<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>
+						<div class="list1">
+							<div class="left">
+								<p>ID:2656589</p>
+								<i>2019-08-22  14:00</i>
+							</div>
+							<div class="choice">
+								+10.000
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--没有数据时显示-->
+		<div class="kong">
+			<img src="img/kong.png" />
+			<p>暂无记录</p>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){
+			$(".details_box .lei").each(function(i){
+				console.log(i)
+				$(this).click(function(){
+					console.log(i)
+					if($(".details_box .lei .dataList").length <= 0) {
+						$(".kong").show();
+					} else {
+						$(".kong").hide();
+					}
+				})
+			})
+		})
+		
+		var $div_li = $('.tab a');
+        $('.tab a').click(function(){
+            $(this).addClass("active").siblings().removeClass("active"); 
+                var index =  $div_li.index(this);  
+            $(".details_box div.lei").eq(index).show().siblings().hide(); 
+		})    
+		
+	</script>
+</html>

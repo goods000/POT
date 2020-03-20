@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" href="css/swiper.css">
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    	<script type="text/javascript" src="js/swiper.min.js"></script>
+    	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.h1{border-bottom: none;}
+	</style>
+	<body>
+		<h1 class="h1">
+	    	<p>首页</p>
+		</h1>
+		<div class="index_top">
+			<header class="index">
+				<h2>余额</h2>
+				<div class="ttop">
+					<b>0.0000</b>
+				</div>
+				<div class="flex">
+					<div class="">
+						<b>0.0000</b>
+						<h2>金豆</h2>
+					</div>
+					<div class="">
+						<b>0.0000</b>
+						<h2>娱乐豆</h2>
+					</div>
+				</div>
+			</header>
+		</div>
+		<!---->
+		<div class="name_right">
+			<ul>
+				<li>
+					<a href="withdraw.html" class="right_img">
+						<img src="img/tb.png" class="ge_img" />
+						<span class="right_title">
+							提币
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="recharge.html" class="right_img">
+						<img src="img/cb.png" class="ge_img" />
+						<span class="right_title">
+							充币
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="cash.html" class="right_img">
+						<img src="img/tx.png" class="ge_img" />
+						<span class="right_title">
+							提现
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="record.html" class="right_img">
+						<img src="img/record.png" class="ge_img" />
+						<span class="right_title">
+							记录
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<img src="img/index_img.png" class="index_img"/>
+	    <!--公告-->
+		<div id="notice" onclick="location.href='news.html'">
+			<img src="img/gonggao.png" class="notice_img"/>
+			<marquee class="dia" scrollAmount=2 >恭喜U生活项目开放成功！</marquee>
+		</div>
+		
+		<!--轮播-->
+		<div class="swiper-container swiper-container_sy">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="img/banner.png"/></div>
+	            <div class="swiper-slide"><img src="img/banner.png"/></div>
+	            <div class="swiper-slide"><img src="img/banner.png"/></div>
+	        </div>
+	        <div class="swiper-pagination"></div>
+	        <div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+	    </div>
+	    
+	    <div class="support">
+			<div class="div"><s></s>理财专区</div>
+			<div class="area">
+				<ul>
+					<a href="short_index.html">
+						<li>
+							<b>短期理财</b>
+							<p>客户专享</p>
+							<img src="img/go_btn.png"/>
+						</li>
+					</a>
+					<a href="asset.html">
+						<li>
+							<b>定期套餐</b>
+							<p>客户专享</p>
+							<img src="img/meal_btn.png"/>
+						</li>
+					</a>
+					<a href="current_index.html">
+						<li>
+							<b>活期理财</b>
+							<p>客户专享</p>
+							<img src="img/go_btn.png"/>
+						</li>
+					</a>
+				</ul>
+			</div>
+			<div class="div"><s></s>汇率专区</div>
+			<div class="hang_box">
+				<div class="index_list">
+					<ul>
+						<li>
+							<div class="info_box"></div>
+							<div class="info_box">国家</div>
+							<div class="info_box">钱币</div>
+							<div class="info_box">余额</div>
+						</li>
+						<li>
+							<div class="info_box"><img src="img/USA.png"/></div>
+							<div class="info_box">美国</div>
+							<div class="info_box">100美金</div>
+							<div class="info_box">≈699.00RMB</div>
+						</li>
+						<li>
+							<div class="info_box"><img src="img/British.png"/></div>
+							<div class="info_box">英国</div>
+							<div class="info_box">100英镑</div>
+							<div class="info_box">≈863.20RMB</div>
+						</li>
+						<li>
+							<div class="info_box"><img src="img/Italy.png"/></div>
+							<div class="info_box">意大利</div>
+							<div class="info_box">100欧元</div>
+							<div class="info_box">≈777.90RMB</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--导入底部导航栏-->
+		<div id="footer" name="1"></div>
+	</body>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    
+    function qrcodeCallback(result){
+		  var lang="${lang}";
+		  if(result.indexOf(window.location.host)==-1){ //等于-1表示这个字符串中没有o这个字符
+		   layer.msg('当前扫描的不属于二维码',{icon:5,time:1000});
+		  }else{
+		   window.location.href=result
+		  }
+    }
+</script>
+</html>

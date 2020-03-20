@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script src="js/Zcheck.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1 class="h1">
+		<button class="iconfont icon-xiangzuo1" onclick="javascript:history.back(-1);"></button>
+    	<p>提币</p>
+	</h1>
+	<div class="select_box">
+		<div class="div_r"><span class="coin">USDT</span><span class="money">0.0000</span></div>
+	</div>
+	<div class="phone">
+		<div class="phone_contert">
+			<div class="phone_list bb">
+				<span>提币地址</span>
+				<select name="">
+					<option value="">请选择钱包地址</option>
+				</select>
+				<img src="img/next.png" class="sao"/>
+			</div>
+			<div class="phone_list bt">
+				<span>提币数量</span>
+				<input type="number" id="num" placeholder="请输入数量" />
+			</div>
+			<div class="phone_list bb">
+				<span>手续费率</span>
+				<input type="number" value="0.0001" id="rate" readonly="readonly" style="color: #FC6900;"/>
+			</div>
+			<div class="phone_list bb">
+				<span>交易密码</span>
+				<input type="password" value="" id="password" placeholder="请输入交易密码" />
+			</div>
+		</div>
+		<button class="annius" onclick="login()">提币</button>
+	</div>	
+	
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="layer/layer.js" ></script>
+	<script>
+		function login(){
+			var num = $("#num").val();
+			var qrcode = $("#qrcode").val();
+			var passwords = $("#password").val();
+			if( num === ""){
+				layer.msg('请输入转出数量',{icon:2,time:1000});
+				$("#num").focus();
+				return false;
+			}
+			if(passwords === ""){
+				layer.msg('请输入交易密码',{icon:2,time:1000});
+				$("#password").focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>

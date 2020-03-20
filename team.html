@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <title></title>
+	    <link rel="stylesheet" href="css/font.css" />
+	    <link rel="stylesheet" href="css/style.css" />
+	    <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	    <style type="text/css">
+	    	.h1{background: none;border-bottom: none;}
+	    	.ge_right{margin: 30px 20px;}
+	    	.h1 button,.ming,.id_box .id{color: #fff;}
+	    </style>
+	</head>
+	<body>
+		<div class="team">
+			<div class="team_box">
+				<h1 class="h1 qrodeh1">
+					<button class="iconfont icon-xiangzuo1" onclick="javascript:history.back(-1);"></button>
+				</h1>
+				<div class="top">
+					<div class="ge_right">
+						<div id="xmTanDiv_1" class="touImg">
+				                <img src="img/logo.png" style="width: 100%;height: 100%;display:block;border-radius: 50%;" id="xmTanImg_1" alt=""/>
+						</div>
+						<div class="ni">
+							<span class="ming">17352654532</span>
+							<span class="id_box"><i class="id">ID:5555555555</i></span>
+						</div>
+					</div>
+					<div class="info">
+						<ul>
+							<li>
+								<b>60</b>
+								<p>直推人数</p>
+							</li>
+							<li>
+								<b>116</b>
+								<p>团队总人数</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>		
+			<div class="team_list">
+				<ul>
+					<li>
+						<div class="info">
+							<div class="div">
+								<div class="img">
+									<img src="img/logo.png" class="touxiang">
+								</div>
+								<div class="l">
+									<p class="name">冬瓜</p>
+									<p class="id">ID:00003</p>
+								</div>
+							</div>
+							<div class="r">
+								<span class="deer">直推</span>
+								<p class="time"><span>2019-06-18 11:11</span></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="info">
+							<div class="div">
+								<div class="img">
+									<img src="img/logo.png" class="touxiang">
+								</div>
+								<div class="l">
+									<p class="name">七月</p>
+									<p class="id">ID:00003</p>
+								</div>
+							</div>
+							<div class="r">
+								<span class="deer jian">间推</span>
+								<p class="time"><span>2019-06-18 11:11</span></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="kong">
+					<p>暂无数据</p>
+					<img src="img/kong.png" />
+				</div>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			show();
+			function show(){
+				//没有数据的时候显示
+				if($(".team_list li").length<=0){
+					$(".kong").show();
+				}else{
+					$(".kong").hide();
+				}
+			}
+		</script>
+	</body>
+</html>

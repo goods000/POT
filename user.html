@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="ge">
+			<img src="img/ge_bg.png" class="ge_top_img"/>
+			<div class="ge_top">
+				<div class="name_top">
+					<div class="ge_right">
+						<div id="xmTanDiv_1" class="touImg">
+							<!--<input type="hidden" id="uploadOrderid" name="id" value="">-->
+							<!--<input type="file" name="file1" id="xdaTanFileImg_1" style="width: 55px; height: 50px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_1(this)" accept="image/*" />-->
+							<!--<i style="border-radius: 50px;position:relative;width: 60px; height: 60px;overflow:hidden;z-index:1;">-->
+				                <img src="img/logo.png" style="width: 100%;height: 100%;display:block;border-radius: 50%;" id="xmTanImg_1" alt=""/>
+				           	<!--</i>-->
+						</div>
+						<div class="ni">
+							<span class="ming">15717422021</span>
+							<span class="id_box"><img src="img/ID.png"/><i class="id">ID:5555555555</i></span>
+						</div>
+					</div>
+					<a class="left">
+						<img src="img/vip.png" class="qr"/>
+						<span>有效会员</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="other">
+			<a class="no">
+				<div class="info">
+					<img src="img/entertainment.png"/>
+					<div class="user_tilte">
+						<b>娱乐</b>
+						<p>线上娱乐</p>
+					</div>
+				</div>			
+			</a>
+			<a class="no">
+				<div class="info">
+					<img src="img/shop.png"/>
+					<div class="user_tilte">
+						<b>商城</b>
+						<p>小积分大用途</p>
+					</div>
+				</div>			
+			</a>
+		</div>
+		<div class="ge_list">
+			<a href="recharge_center.html" class="list">
+				<div class="list_left">
+					<img src="img/re_center.png" class="tups_img"/>
+					<span class="zi">
+						充值中心
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<a href="income_details.html" class="list">
+				<div class="list_left">
+					<img src="img/yong.png" class="tups_img"/>
+					<span class="zi">
+						收益明细
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<a href="invite.html" class="list">
+				<div class="list_left">
+					<img src="img/invite.png" class="tups_img"/>
+					<span class="zi">
+						邀请好友
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<a href="news.html" class="list">
+				<div class="list_left">
+					<img src="img/notice.png" class="tups_img"/>
+					<span class="zi">
+						消息中心
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<a href="bank.html" class="list">
+				<div class="list_left">
+					<img src="img/my_bank.png" class="tups_img"/>
+					<span class="zi">
+						我的银行卡
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<a href="team.html" class="list">
+				<div class="list_left">
+					<img src="img/team.png" class="tups_img"/>
+					<span class="zi">
+						我的团队
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<a href="setup.html" class="list">
+				<div class="list_left">
+					<img src="img/setup.png" class="tups_img"/>
+					<span class="zi">
+						设置中心
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>
+			<!--<a href="feedback.html" class="list">
+				<div class="list_left">
+					<img src="img/yj.png" class="tups_img"/>
+					<span class="zi">
+						意见反馈
+					</span>
+				</div>
+				<img src="img/next.png" class="next_img"/>
+			</a>-->
+			
+		</div>
+		<!--底部导航栏-->
+		<div id="footer" name="3"></div>
+	</body>
+	<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(".no").click(function(){
+			layer.msg('暂未开放,敬请期待!',{icon:6,time:1000});
+		})
+		
+		
+		function xmTanUploadImg_1(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择!');return false;
+		}
+		var img = document.getElementById("xmTanImg_1");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+	</script>
+</html>
