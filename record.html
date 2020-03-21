@@ -63,7 +63,7 @@
 			
 			<!--没有数据时显示-->
 			<div class="kong">
-				<img src="images/kong.png" />
+				<img src="img/kong.png" />
 				<p>暂无记录</p>
 			</div>
 
@@ -77,12 +77,13 @@
 
 			function show() {
 				//没有数据的时候显示
-				if($(".type.on li").length <= 0) {
+				if($(".record li").length <= 0) {
 					$(".kong").show();
 				} else {
 					$(".kong").hide();
 				}
 			}
+			show();
 			
 			var $div_li = $('.tab a');
 	        $('.tab a').click(function(){

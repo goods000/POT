@@ -95,15 +95,13 @@
 	    })
 		
 		$(".annius").click(function(){
-			$(".two").hide();
-			$(".QR_code").show();
+//			$(".two").hide();
+//			$(".QR_code").show();
 			var num = $("#num").val();
 			var passwords = $("#password").val();
 			var value = $("#driverlist option:selected").text();
 			var code = $("input[name='file1']").val();
 			if(value == "微信支付" || value == "支付宝"){
-               	$(".two").hide();
-			   	$(".QR_code").show();
 				if( num === ""){
 					layer.msg('请输入充值金额',{icon:2,time:1000});
 					$("#num").focus();
@@ -120,8 +118,6 @@
 				layer.msg('充值成功',{icon:6,time:1000});
 				return true;
             }else{
-            	$(".two").show();
-				$(".QR_code").hide();
 				var name=$("#name").val();
 				var bank=$("#bank").val();
 				var numCard=$("#numCard").val();

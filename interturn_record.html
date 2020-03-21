@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:history.back(-1);"></button>
+	    	<p>转出记录</p>
+		</h1>
+
+		<div class="record tixn_record">
+			<ul>
+				<li>
+					<p><span>流水编号：</span><i>fgdkjk68599898655</i></p>
+					<p><span>对方账号：</span><i>13222226688</i></p>
+					<p><span>转出数量：</span><i class="y">888.00</i></p>
+					<p><span>转出状态：</span><i class="y">转出中</i></p>
+					<span class="span"><span>转出时间：</span><u>2019-12-23 21:00</u></span>
+				</li>
+				<li>
+					<p><span>流水编号：</span><i>fgdkjk68599898655</i></p>
+					<p><span>对方账号：</span><i>13311111111</i></p>
+					<p><span>转出数量：</span><i class="y">888.00</i></p>
+					<p><span>转出状态：</span><i>已完成</i></p>
+					<span class="span"><span>转出时间：</span><u>2019-12-23 21:00</u></span>
+				</li>
+			</ul>
+		</div>
+			
+		<!--没有数据时显示-->
+		<div class="kong">
+			<img src="img/kong.png" />
+			<p>暂无记录</p>
+		</div>
+		<script>
+
+			function show() {
+				//没有数据的时候显示
+				if($(".tixn_record li").length <= 0) {
+					$(".kong").show();
+				} else {
+					$(".kong").hide();
+				}
+			}
+			show();
+			
+		</script>
+
+	</body>
+
+</html>
